@@ -4,7 +4,7 @@ const TodoItem = ({todo, deleteTodo}) => {
     return (
         <div>
             <span>{todo}</span>
-            <button onClick={() => deleteTodo(todo), console.log('inside todoitem component delete func!')}>delete</button>
+            <button onClick={deleteTodo}>delete</button>
         </div>
     );
 };

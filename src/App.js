@@ -32,7 +32,7 @@ class TodoApp extends React.Component {
     handleChange = e => {
       console.log('inside handle change!')
         const todo = e.target.value;
-        this.setState({todo: todo}, console.log('inside handlechange setstate!'))
+        this.setState({todo}, console.log('inside handlechange setstate!', this.state.todo))
     };
 
     handleSubmit = e => {
@@ -40,7 +40,7 @@ class TodoApp extends React.Component {
       let newTodos = this.state.todos
       let todo = this.state.todo
       newTodos.push(todo)
-      this.setState({todos: newTodos}, console.log('inside setstate!'))
+      this.setState({todos: newTodos}, console.log('inside handle submit setstate!'))
     }
 
     render() {
@@ -60,7 +60,7 @@ class TodoApp extends React.Component {
                     <TodoItem
                         key={todo}
                         todo={todo}
-                        deleteTodo={this.deleteTodo}
+                        deleteTodo={this.deleteTodo.bind(this)}
                     />
                 ))}
             </div>
