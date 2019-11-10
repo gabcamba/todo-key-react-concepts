@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
 const TodoItem = ({todo, deleteTodo}) => {
     return (
         <div>
             <span>{todo}</span>
-            <button onClick={deleteTodo}>delete</button>
+            <button onClick={deleteTodo.bind(this, todo)}>delete</button>
         </div>
     );
 };
