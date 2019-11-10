@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
+
 import TodoItem from "./todo-item";
+import AddTodo from './AddTodoComponent';
 
 class TodoApp extends React.Component {
     state = {
@@ -21,7 +23,7 @@ class TodoApp extends React.Component {
       console.log('inside add todo method!')
         const todos = this.state.todos;
         
-        if(this.state.todo === ''){
+        if(this.state.todo === '' || this.state.todo === undefined){
           alert("You can't add an empty todo, silly!")
         }else {
           todos.push(this.state.todo);
@@ -47,20 +49,10 @@ class TodoApp extends React.Component {
     };
 
     render() {
-        console.log("inside render!", this.state.todos);
+        console.log("inside render!", this.state.todo);
         return (
             <div className="main-content">
-                <h1> add new note!</h1>
-                <input
-                    type="text"
-                    onChange={this.handleChange}
-                    placeholder="new Todo"
-                />
-                <input
-                    onClick={this.handleSubmit}
-                    type="submit"
-                    value="Add note"
-                />
+                <AddTodo handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
 
                 {this.state.todos.map(todo => (
                     <TodoItem
