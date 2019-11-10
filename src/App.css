@@ -1,5 +1,6 @@
 .main-content {
   text-align: center;
+  align-content: center;
 }
 
 .App-logo {
@@ -19,4 +20,8 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.row{
+  align-content: center;
 }

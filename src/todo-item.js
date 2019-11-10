@@ -1,27 +1,22 @@
 import React from "react";
-import {
-    Card, CardText, CardBody, Button, Row, Col
-  } from 'reactstrap';
+import { Card, CardText, CardBody, Button, Row, Col, CardTitle } from "reactstrap";
+
+import './App.css'
 
 const TodoItem = ({ todo, deleteTodo }) => {
+    
     return (
-        <Row>
-            {/*<span>{todo}</span>
-    <button onClick={deleteTodo.bind(this, todo)}>delete</button>*/}
-        <Col sm="6" >
+        <div style={{marginTop: 20, alignContent: "center"}} className="col-sm-12 d-flex justify-content-center">
+        <Card style={{alignContent:"center", color: "white", backgroundColor: '#333', borderColor: '#333' }}>
 
-        <Card>
-        <CardBody>
-            <CardText>
-                {todo}
-            </CardText>
-            <Button onClick={deleteTodo.bind(this, todo)}>Delete</Button>
-        </CardBody>
-    </Card>
-        </Col>
-            
-        </Row>
+        
+        <CardText>{todo}</CardText>
+        <Button onClick={deleteTodo}>Delete</Button>
+      </Card>
+      </div>
     );
 };
 
 export default TodoItem;
+
+
